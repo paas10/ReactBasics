@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Saludar(props) {
   const { userInfo, saludarFn } = props;
   const { name = "Anónimo", age } = userInfo
-  console.log(userInfo)
+  // console.log(userInfo)
 
   // Hook de estado <<useState>>
   const [stateCar, setStateCar] = useState(false);
+
+  useEffect(() => {
+    // ...
+    console.log('useEffect')
+    // ...
+  }, [stateCar])
 
   return (
     <div>
