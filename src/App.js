@@ -3,6 +3,19 @@ import './App.css';
 import HolaMundo from './components/HolaMundo';
 import AdiosMundo from './components/AdiosMundo';
 import Saludar from './components/Saludar';
+import React from 'react';
+
+// Function Component
+function Welcome(props) {
+  return <h1>Hola { props.nombre } / Functional Component</h1>
+}
+
+// Class Component
+class Bienvenido extends React.Component {
+  render() {
+    return <h1>Hola { this.props.nombre } / Class Component</h1>
+  }
+}
 
 function App() {
 
@@ -19,6 +32,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <Welcome nombre='Pablo'/>
+        <Bienvenido nombre='André'/>
 
         {/* <HolaMundo/>
         <AdiosMundo/> */}
